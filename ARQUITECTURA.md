@@ -212,6 +212,8 @@ orden y borrado). **No se ha probado contra Jira ni Google reales**, porque requ
 
 ## 4. Publicación automática
 
+> **Cómo está publicado ahora:** repositorio público `oysdeister/altima-jira-web`, GitHub Pages en modo *Deploy from a branch* (`main`, raíz). `index.html` carga `config.js`, `adapter.js` y `dashboard-artifact.html` en el navegador, sin build ni Actions, y Pages se republica sola en cada push. Lo que sigue (workflow con variables) es la alternativa con Actions, que necesita un token de GitHub con permiso `workflow`.
+
 [`.github/workflows/pages.yml`](../.github/workflows/pages.yml): en cada push a `main` que toque
 `dashboard-artifact.html`, `web/**` o el propio workflow (o a mano desde Actions):
 
@@ -289,6 +291,8 @@ npx wrangler deploy
 4. Anota la URL del Worker (`https://altima-jira-oauth.<subdominio>.workers.dev`).
 
 ### 6.5 Variables del repositorio
+
+> En la publicación actual (sin Actions) no hay variables: rellena los mismos valores directamente en `config.js` del repositorio y haz push.
 **Settings → Secrets and variables → Actions → Variables** (pestaña *Variables*, no *Secrets*):
 
 | Variable | Valor |
