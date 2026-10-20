@@ -1,0 +1,5 @@
+*.local.json
+worker/wrangler.toml
+_site/
+.DS_Store
+node_modules/

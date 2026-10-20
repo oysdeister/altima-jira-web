@@ -1,0 +1,10 @@
+# Copia este archivo como wrangler.toml y rellena los valores (no contiene secretos).
+# El client secret se guarda aparte con:  npx wrangler secret put ATLASSIAN_CLIENT_SECRET
+name = "altima-jira-oauth"
+main = "oauth-proxy.js"
+compatibility_date = "2026-01-01"
+
+[vars]
+ALLOWED_ORIGIN = "https://<usuario-github>.github.io"
+ATLASSIAN_CLIENT_ID = "<client id de la app de developer.atlassian.com>"
+CLOUD_ID = "<cloudId del sitio de Jira>"

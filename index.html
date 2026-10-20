@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Altima Jira</title>
+<!-- Versión web del panel: carga la configuración y el adaptador (window.claude de sustitución) y después
+     la MISMA fuente que el artefacto de claude.ai, sin build. GitHub Pages la vuelve a publicar en cada push. -->
+<script src="https://accounts.google.com/gsi/client" async></script>
+<script src="config.js"></script>
+<script src="adapter.js"></script>
+<script>
+fetch('dashboard-artifact.html', {cache: 'no-cache'})
+  .then((r) => { if(!r.ok) throw new Error(r.status); return r.text(); })
+  .then((html) => { document.open(); document.write('<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">' + html); document.close(); })
+  .catch((e) => { document.body.textContent = 'No se pudo cargar el panel (' + e.message + ').'; });
+</script>
+</head>
+<body></body>
+</html>
